@@ -37,7 +37,7 @@ describe ParkParser do
       }
     }
 
-    actual = ParkParser.new(input).index_the_parks
+    actual = ParkParser.new(input).by_id
 
     expect(actual).to eq expected
   end
@@ -95,7 +95,7 @@ describe ParkParser do
       ]
     }
 
-    actual = ParkParser.new(input).group_by_country
+    actual = ParkParser.new(input).group_by(:country)
 
     expect(actual).to eq expected
   end
@@ -170,8 +170,8 @@ describe ParkParser do
       ]
     }
 
-    actual = ParkParser.new(input).group_by_country_and_state
+    actual = ParkParser.new(input).group_by(:state, :country)
     expect(actual).to eq expected
   end
-  
+
 end
